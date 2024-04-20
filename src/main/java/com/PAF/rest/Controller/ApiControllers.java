@@ -42,7 +42,7 @@ public class ApiControllers {
     @PutMapping(value = "/update/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         User updatedUser = userRepo.findById(id).get();
-        updatedUser.setFirstname(user.getFirstname());
+        updatedUser.setWorkout_Name(user.getWorkout_Name());
         updatedUser.setLastname(user.getLastname());
         updatedUser.setOccupation(user.getOccupation());
         updatedUser.setAge(user.getAge());

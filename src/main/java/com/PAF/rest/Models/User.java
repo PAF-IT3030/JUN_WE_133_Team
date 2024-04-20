@@ -14,7 +14,7 @@ public class User {
     private long id;
 
     @Column
-    private String firstname;
+    private String workout_name;
 
     @Column
     private String lastname;
@@ -34,11 +34,11 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
-    public String getFirstname() {
-        return firstname;
+    public String getWorkout_Name() {
+        return workout_name;
     }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setWorkout_Name(String workout_name) {
+        this.workout_name = workout_name;
     }
     public String getLastname() {
         return lastname;
