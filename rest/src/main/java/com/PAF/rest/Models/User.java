@@ -76,7 +76,7 @@ public class User {
         return mobileNumber;
     }
 
-    public void setmobileNumber(String mobileNumber) {
+    public void setMobileNumber(String mobileNumber) {
         this.mobileNumber = mobileNumber;
     }
 

@@ -1,19 +1,18 @@
 package com.PAF.rest.Controller;
 
-import org.springframework.web.bind.annotation.RestController;
-
-import com.PAF.rest.Models.User;
-import com.PAF.rest.Repo.UserRepo;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-
-import java.util.List;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.PAF.rest.Models.User;
+import com.PAF.rest.Repo.UserRepo;
 
 
 
@@ -44,8 +43,10 @@ public class ApiControllers {
         User updatedUser = userRepo.findById(id).get();
         updatedUser.setFirstname(user.getFirstname());
         updatedUser.setLastname(user.getLastname());
-        updatedUser.setOccupation(user.getOccupation());
-        updatedUser.setAge(user.getAge());
+        updatedUser.setBio(user.getBio());
+        updatedUser.setEmail(user.getEmail());
+        updatedUser.setBirthDate(user.getBirthDate());
+        updatedUser.setMobileNumber(user.getMobileNumber());
         userRepo.save(updatedUser);
         return "Updated";
         
