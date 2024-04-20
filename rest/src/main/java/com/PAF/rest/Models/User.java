@@ -1,5 +1,7 @@
 package com.PAF.rest.Models;
 
+import java.sql.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -20,13 +22,16 @@ public class User {
     private String lastname;
 
     @Column
-    private int age;
-
-    @Column
-    private String occupation;
-
-    @Column
     private String bio;
+
+    @Column
+    private String email;
+
+    @Column
+    private Date birthDate;
+
+    @Column
+    private String mobileNumber;
 
     public long getId() {
         return id;
@@ -46,19 +51,34 @@ public class User {
     public void setLastname(String lastname) {
         this.lastname = lastname;
     }
-    public int getAge() {
-        return age;
+    public String getBio() {
+        return bio;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setBio(String bio) {
+        this.bio = bio;
     }
-    public String getOccupation() {
-        return occupation;
+    public String getEmail() {
+        return email;
     }
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setEmail(String email) {
+        this.email = email;
     }
     
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
+    }
+
+    public String getMobileNumber() {
+        return mobileNumber;
+    }
+
+    public void setmobileNumber(String mobileNumber) {
+        this.mobileNumber = mobileNumber;
+    }
 
 
 }
