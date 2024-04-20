@@ -25,6 +25,9 @@ public class User {
     @Column
     private String occupation;
 
+    @Column
+    private String bio;
+
     public long getId() {
         return id;
     }
