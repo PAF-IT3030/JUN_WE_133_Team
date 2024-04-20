@@ -14,16 +14,16 @@ public class User {
     private long id;
 
     @Column
-    private String firstname;
+    private String fitness_act;
 
     @Column
-    private String lastname;
+    private String workouts;
 
     @Column
-    private int age;
+    private String meals;
 
     @Column
-    private String occupation;
+    private String progress;
 
     public long getId() {
         return id;
@@ -31,29 +31,29 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
-    public String getFirstname() {
-        return firstname;
+    public String getFitness_act() {
+        return fitness_act;
     }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setFitness_act(String fitness_act) {
+        this.fitness_act = fitness_act;
     }
-    public String getLastname() {
-        return lastname;
+    public String getWorkouts() {
+        return workouts;
     }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setWorkouts(String workouts) {
+        this.workouts = workouts;
     }
-    public int getAge() {
-        return age;
+    public String getMeals() {
+        return meals;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setMeals(String meals) {
+        this.meals = meals;
     }
-    public String getOccupation() {
-        return occupation;
+    public String getProgress() {
+        return progress;
     }
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setProgress(String progress) {
+        this.progress = progress;
     }
     
 
