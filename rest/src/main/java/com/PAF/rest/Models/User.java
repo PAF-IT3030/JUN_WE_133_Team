@@ -26,7 +26,7 @@ public class User {
     private String email;
 
     @Column
-    private String birthDate;
+    private String birthdate;
 
     @Column
     private int mobilenumber;
@@ -65,11 +65,11 @@ public class User {
     }
 
     public String getBirthdate() {
-        return birthDate;
+        return birthdate;
     }
 
-    public void setBirthdate(String birthDate) {
-        this.birthDate = birthDate;
+    public void setBirthdate(String birthdate) {
+        this.birthdate = birthdate;
     }
 
     public int getMobilenumber() {
