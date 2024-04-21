@@ -82,7 +82,7 @@ class ListWorkoutComponent extends Component {
                                   <td style={{ border: "1px solid black", padding: "8px" }}>{workout.repetition}</td>
                                   <td style={{ border: "1px solid black", padding: "8px" }}>{workout.fitness_goals}</td>
                                   <td style={{ border: "1px solid black", padding: "8px" }}>
-                                      <Link to={`/view/${workout.id}`} className="btn btn-info" style={{ marginLeft: "10px", backgroundColor: "blue" }}>View</Link>
+                                      
                                       <button onClick={() => this.deleteWorkout(workout.id)} className="btn btn-danger" style={{ marginLeft: "10px", backgroundColor: "red" }}>Delete</button>
                                       <Link to={`/update/${workout.id}`} className="btn btn-info" style={{ marginLeft: "10px", backgroundColor: "orange" }}>Update</Link>
                                   </td>
