@@ -10,7 +10,9 @@ class CreateMeal extends Component {
             firstname: '',
             lastname: '',
             age: '',
-            occupation: ''
+            occupation: '',
+            error: '',
+            successMessage: ''
         };
 
         this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
@@ -22,6 +24,18 @@ class CreateMeal extends Component {
 
     saveOrUpdateMeal = (e) => {
         e.preventDefault();
+
+        // Check if any field is empty
+        if (
+            !this.state.firstname ||
+            !this.state.lastname ||
+            !this.state.age ||
+            !this.state.occupation
+        ) {
+            this.setState({ error: 'Please fill in all fields' });
+            return;
+        }
+
         let meal = {
             firstname: this.state.firstname,
             lastname: this.state.lastname,
@@ -31,6 +45,18 @@ class CreateMeal extends Component {
 
         MealPlan.createMeal(meal)
             .then(res => {
+                this.setState({
+                    successMessage: 'Meal plan created successfully',
+                    error: ''
+                });
+                // Reset form fields after successful submission
+                this.setState({
+                    firstname: '',
+                    lastname: '',
+                    age: '',
+                    occupation: ''
+                });
+                // Redirect to home after saving
                 this.props.history.push('/');
             })
             .catch(error => {
@@ -71,32 +97,57 @@ class CreateMeal extends Component {
                                 <form>
                                     <div className="form-group">
                                         <label> Meals: </label>
-                                        <input placeholder="Enter Meals" 
-                                               name="firstname" 
-                                               className="form-control" 
-                                            value={this.state.firstname} onChange={this.changeFirstNameHandler}/>
+                                        <input 
+                                            placeholder="Enter Meals" 
+                                            name="firstname" 
+                                            className="form-control" 
+                                            value={this.state.firstname} 
+                                            onChange={this.changeFirstNameHandler}
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label> Recipes: </label>
-                                        <input placeholder="Enter recipes" 
-                                               name="lastname" 
-                                               className="form-control" 
-                                            value={this.state.lastname} onChange={this.changeLastNameHandler}/>
+                                        <input 
+                                            placeholder="Enter recipes" 
+                                            name="lastname" 
+                                            className="form-control" 
+                                            value={this.state.lastname} 
+                                            onChange={this.changeLastNameHandler}
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label> Potion Size: </label>
-                                        <input placeholder="Enter Potion Size" 
-                                               name="age" 
-                                               className="form-control" 
-                                            value={this.state.age} onChange={this.changeAgeHandler}/>
+                                        <input 
+                                            placeholder="Enter Potion Size" 
+                                            name="age" 
+                                            className="form-control" 
+                                            value={this.state.age} 
+                                            onChange={this.changeAgeHandler}
+                                        />
                                     </div>
                                     <div className="form-group">
                                         <label> Nutritional Infromation: </label>
-                                        <input placeholder="Enter Nutritional Information" 
-                                               name="occupation" 
-                                               className="form-control" 
-                                            value={this.state.occupation} onChange={this.changeOccupationHandler}/>
-                                    </div><br></br>
+                                        <input 
+                                            placeholder="Enter Nutritional Information" 
+                                            name="occupation" 
+                                            className="form-control" 
+                                            value={this.state.occupation} 
+                                            onChange={this.changeOccupationHandler}
+                                        />
+                                    </div>
+                                    <br />
+                                    {/* Display error message */}
+                                    {this.state.error && (
+                                        <div className="alert alert-danger" role="alert">
+                                            {this.state.error}
+                                        </div>
+                                    )}
+                                    {/* Display success message */}
+                                    {this.state.successMessage && (
+                                        <div className="alert alert-success" role="alert">
+                                            {this.state.successMessage}
+                                        </div>
+                                    )}
                                     <button className="btn btn-success" onClick={this.saveOrUpdateMeal}>Save</button>
                                     <Link to="/" className="btn btn-danger" style={{marginLeft: "10px"}}>Cancel</Link>
                                 </form>
