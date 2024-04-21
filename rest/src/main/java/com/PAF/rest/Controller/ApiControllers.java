@@ -45,7 +45,7 @@ public class ApiControllers {
         updatedUser.setLastname(user.getLastname());
         updatedUser.setBio(user.getBio());
         updatedUser.setEmail(user.getEmail());
-        updatedUser.setBirthDate(user.getBirthDate());
+        updatedUser.setBirthdate(user.getBirthdate());
         updatedUser.setMobileNumber(user.getMobileNumber());
         userRepo.save(updatedUser);
         return "Updated";

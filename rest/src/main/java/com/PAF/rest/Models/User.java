@@ -64,11 +64,11 @@ public class User {
         this.email = email;
     }
 
-    public String getBirthDate() {
+    public String getBirthdate() {
         return birthDate;
     }
 
-    public void setBirthDate(String birthDate) {
+    public void setBirthdate(String birthDate) {
         this.birthDate = birthDate;
     }
 
