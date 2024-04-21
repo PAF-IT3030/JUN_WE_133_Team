@@ -63,7 +63,7 @@ const UpdateUser = () => {
         repetitions: parseInt(repetitions), 
         fitness_goals: fitnessGoals
       }, id);
-      alert('User updated successfully');
+      alert('Workout updated successfully');
       fetchUsers();
       // Clear input fields after submission
       setWorkoutName('');
@@ -83,7 +83,7 @@ const UpdateUser = () => {
       <div className="container">
         <div className="row">
           <div className="card col-md-6 offset-md-3">
-            <h3 className="text-center">Update User</h3>
+            <h3 className="text-center">Update Workout</h3>
             <div className="card-body">
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
