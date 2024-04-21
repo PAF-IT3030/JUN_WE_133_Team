@@ -29,7 +29,7 @@ public class User {
     private String birthDate;
 
     @Column
-    private int mobileNumber;
+    private int mobilenumber;
 
     
     public long getId() {
@@ -72,11 +72,11 @@ public class User {
         this.birthDate = birthDate;
     }
 
-    public int getMobileNumber() {
-        return mobileNumber;
+    public int getMobilenumber() {
+        return mobilenumber;
     }
 
-    public void setMobileNumber(int mobileNumber) {
-        this.mobileNumber = mobileNumber;
+    public void setMobilenumber(int mobileNumber) {
+        this.mobilenumber = mobilenumber;
     }
 }
