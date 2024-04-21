@@ -15,6 +15,9 @@ function App() {
           <Route path='/' element={<ListMedia />} />
           <Route path="/save" element={<CreateMediaComponent />} />
           <Route path="/update/:id" element={<UpdateMedia />} />
+          <Route path="/allmedia" element={<ListMedia />} />
+          <Route path="/createpost" element={<CreateMediaComponent />} />
+          
         </Routes>
         <FooterComponent />
       </BrowserRouter>

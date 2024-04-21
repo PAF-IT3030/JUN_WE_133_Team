@@ -108,7 +108,7 @@ const UpdateMedia = () => {
                 <div className="form-group">
                   <label>progress:</label>
                   <input
-                    type="number"
+                    type="text"
                     value={progress}
                     onChange={handleInputChange}
                     name="progress"

@@ -12,9 +12,9 @@ class MediaService {
         return axios.post(REST_API_BASE_URL + '/save', userMedia); // Corrected endpoint
     }
 
-    getEmployeeById(MediaID){
-        return axios.get(REST_API_BASE_URL + '/users/' + MediaID); // Corrected endpoint
-    }
+    // getMediaById(MediaID){
+    //     return axios.get(REST_API_BASE_URL + '/users/' + MediaID); // Corrected endpoint
+    // }
 
     updateMedia(userMedia, MediaID){
         return axios.put(REST_API_BASE_URL + '/update/' + MediaID, userMedia); // Corrected endpoint

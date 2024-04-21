@@ -1,6 +1,6 @@
 package com.PAF.rest.Models;
 
-import org.springframework.web.multipart.MultipartFile;
+
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
