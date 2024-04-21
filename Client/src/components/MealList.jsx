@@ -53,40 +53,27 @@ class MealList extends Component {
         return (
             <div style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}>
                 <h2 style={{ textAlign: "center", marginBottom: "20px", color: "#333" }}>Meal Plans List</h2>
-                <div className="y">
-                    <Link to="/save" className="btn btn-primary" style={{ textDecoration: "none", padding: "5px 10px", marginRight: "10px" }}>Add Meal Plan</Link>
+                <div style={{ display: "flex", justifyContent: "center", marginBottom: "20px" }}>
+                    <Link to="/save" className="btn btn-primary" style={{ textDecoration: "none", padding: "5px 10px", marginRight: "10px" }}>Share Your Meal Plan</Link>
                 </div>
-                <br />
                 <div className="row">
-                    <table className="table table-striped table-bordered" style={{ width: "100%", borderCollapse: "collapse" }}>
-                        <thead>
-                            <tr style={{ backgroundColor: "#f2f2f2", borderBottom: "2px solid #333" }}>
-                                <th style={{ padding: "10px" }}>User ID</th>
-                                <th style={{ padding: "10px" }}>Meal Plans</th>
-                                <th style={{ padding: "10px" }}>Recipes</th>
-                                <th style={{ padding: "10px" }}>Portion Size</th>
-                                <th style={{ padding: "10px" }}>Nutritional Information</th>
-                                
-                                <th style={{ padding: "10px" }}>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {meals.map(meal =>
-                                <tr key={meal.id}>
-                                    <td style={{ padding: "10px" }}>{meal.id}</td>
-                                    <td style={{ padding: "10px" }}>{meal.firstname}</td>
-                                    <td style={{ padding: "10px" }}>{meal.lastname}</td>
-                                    <td style={{ padding: "10px" }}>{meal.age}</td>
-                                    <td style={{ padding: "10px" }}>{meal.occupation}</td>
-                                    <td style={{ padding: "10px" }}>
-                                        <Link to={`/view/${meal.id}`} className="btn btn-info" style={{ marginLeft: "10px", textDecoration: "none" }}>View</Link>
-                                        <button onClick={() => this.deleteMeal(meal.id)} className="btn btn-danger" style={{ marginLeft: "10px" }}>Delete</button>
-                                        <Link to={`/update/${meal.id}`} className="btn btn-info" style={{ marginLeft: "10px", textDecoration: "none" }}>Update</Link>
-                                    </td>
-                                </tr>
-                            )}
-                        </tbody>
-                    </table>
+                    {meals.map(meal =>
+                        <div key={meal.id} className="col-md-4 mb-4">
+                            <div className="card">
+                                <div className="card-body">
+                                    <p className="card-title">Meal Plans:{meal.firstname}</p>
+				    <p className="card-text">Recipes: {meal.lastname}</p>
+                                    <p className="card-text">Potion Size: {meal.age}</p>
+                                    <p className="card-text">Nutritional Information: {meal.occupation}</p>
+                                    <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
+                                        <Link to={`/view/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>View</Link>
+                                        <button onClick={() => this.deleteMeal(meal.id)} className="btn btn-danger">Delete</button>
+                                        <Link to={`/update/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>Update</Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </div>
         );

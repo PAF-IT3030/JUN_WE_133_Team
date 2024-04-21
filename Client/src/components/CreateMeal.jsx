@@ -96,7 +96,7 @@ class CreateMeal extends Component {
                             <div className="card-body">
                                 <form>
                                     <div className="form-group">
-                                        <label> Meals: </label>
+                                        <label> Meals:(Breakfast, Lunch, Dinner) </label>
                                         <input 
                                             placeholder="Enter Meals" 
                                             name="firstname" 
