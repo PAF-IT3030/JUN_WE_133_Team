@@ -4,13 +4,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.PAF.rest.Models.User;
 import com.PAF.rest.Repo.UserRepo;
+import com.google.protobuf.compiler.PluginProtos.CodeGeneratorResponse.File;
 
+import org.apache.commons.lang3.time.DateFormatUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.FieldError;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import java.io.InputStream;
+import java.nio.file.*;
+import java.nio.file.Paths;
 import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -36,7 +42,25 @@ public class ApiControllers {
 
     @PostMapping(value = "/save")
     public String saveUser(@RequestBody User user){
+        
         userRepo.save(user);
+        String image = user.getImageFileName();
+
+        // try{
+        //     String uploadDir ="public/image/";
+        //     Path uploadpath = Paths.get(uploadDir);
+            
+        //     if (!Files.exists(uploadpath)){
+        //         Files.createDirectories(uploadpath);
+        //     }
+        //     try (InputStream inputStream =image.getInputStream()){
+
+        //     }
+        // }
+
+        
+        
+        
         return "Saved...";
     }
 
@@ -47,6 +71,7 @@ public class ApiControllers {
         updatedUser.setWorkouts(user.getWorkouts());
         updatedUser.setMeals(user.getMeals());
         updatedUser.setProgress(user.getProgress());
+        
         userRepo.save(updatedUser);
         return "Updated";
         

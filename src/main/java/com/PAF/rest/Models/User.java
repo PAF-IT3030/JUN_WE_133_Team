@@ -27,8 +27,8 @@ public class User {
     @Column
     private String progress;
 
-    @Column
-    private MultipartFile imagefileName;
+     @Column
+     private String imagefileName;
 
     public long getId() {
         return id;
@@ -61,11 +61,11 @@ public class User {
         this.progress = progress;
     }
 
-    public MultipartFile getImageFileName(){
+    public String getImageFileName(){
         return imagefileName;
     }
     
-    public void setImageFileName(MultipartFile imagefileName ){
+    public void setImageFileName(String imagefileName ){
         this.imagefileName = imagefileName;
     }
 
