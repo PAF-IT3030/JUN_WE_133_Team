@@ -17,16 +17,21 @@ public class User {
     private String workout_name;
 
     @Column
-    private String lastname;
+    private String description;
 
     @Column
-    private int age;
+    private String exercise_name;
 
     @Column
-    private String occupation;
+    private String sets;
 
     @Column
-    private String meal;
+    private String repetition;
+
+    @Column
+    private String fitness_goals;
+
+   
 
     public long getId() {
         return id;
@@ -34,31 +39,43 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
-    public String getWorkout_Name() {
+    public String getWorkout_name() {
         return workout_name;
     }
-    public void setWorkout_Name(String workout_name) {
+    public void setWorkout_name(String workout_name) {
         this.workout_name = workout_name;
     }
-    public String getLastname() {
-        return lastname;
+    public String getDescription() {
+        return description;
     }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setDescription(String description) {
+        this.description = description;
     }
-    public int getAge() {
-        return age;
+    public String getExercise_name() {
+        return exercise_name;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setExercise_name(String exercise_name) {
+        this.exercise_name = exercise_name;
     }
-    public String getOccupation() {
-        return occupation;
+    public String getSets() {
+        return sets;
     }
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setSets(String sets) {
+        this.sets = sets;
+    }
+    public String getRepetition() {
+        return repetition;
+    }
+    public void setRepetition(String repetition) {
+        this.repetition = repetition;
+    }
+
+    public String getFitness_goals() {
+        return fitness_goals;
+    }
+    public void setFitness_goals(String fitness_goals) {
+        this.fitness_goals = fitness_goals;
     }
     
-
 
 }

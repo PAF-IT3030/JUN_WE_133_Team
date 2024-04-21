@@ -6,6 +6,7 @@ import com.PAF.rest.Models.User;
 import com.PAF.rest.Repo.UserRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,7 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-
+@CrossOrigin("*")
 
 @RestController
 public class ApiControllers {
@@ -42,10 +43,12 @@ public class ApiControllers {
     @PutMapping(value = "/update/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         User updatedUser = userRepo.findById(id).get();
-        updatedUser.setWorkout_Name(user.getWorkout_Name());
-        updatedUser.setLastname(user.getLastname());
-        updatedUser.setOccupation(user.getOccupation());
-        updatedUser.setAge(user.getAge());
+        updatedUser.setWorkout_name(user.getWorkout_name());
+        updatedUser.setDescription(user.getDescription());
+        updatedUser.setSets(user.getSets());
+        updatedUser.setExercise_name(user.getExercise_name());
+        updatedUser.setRepetition(user.getRepetition());
+        updatedUser.setFitness_goals(user.getFitness_goals());
         userRepo.save(updatedUser);
         return "Updated";
         
