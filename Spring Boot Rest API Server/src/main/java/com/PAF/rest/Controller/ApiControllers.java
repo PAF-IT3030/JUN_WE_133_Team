@@ -15,6 +15,8 @@ import java.util.List;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.http.ResponseEntity;
+import java.util.Optional;
 
 @CrossOrigin("*")
 
@@ -33,6 +35,18 @@ public class ApiControllers {
     public List<User> getUsers(){
         return userRepo.findAll();
     }
+    @GetMapping(value = "/users/{id}")
+public ResponseEntity<User> getUserById(@PathVariable long id) {
+    Optional<User> optionalUser = userRepo.findById(id);
+    if (optionalUser.isPresent()) {
+        User user = optionalUser.get();
+        return ResponseEntity.ok().body(user);
+    } else {
+        return ResponseEntity.notFound().build();
+    }
+}
+
+    
 
     @PostMapping(value = "/save")
     public String saveUser(@RequestBody User user){
@@ -51,6 +65,7 @@ public class ApiControllers {
         return "Updated";
         
     }
+    
 
     @DeleteMapping(value = "/delete/{id}")
     public String deleteUser(@PathVariable long id){
