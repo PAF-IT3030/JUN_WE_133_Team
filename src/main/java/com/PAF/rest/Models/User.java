@@ -25,6 +25,9 @@ public class User {
     @Column
     private String progress;
 
+    @Column
+    private String imagefileName;
+
     public long getId() {
         return id;
     }
@@ -55,7 +58,14 @@ public class User {
     public void setProgress(String progress) {
         this.progress = progress;
     }
+
+    public String getImageFileName(){
+        return imagefileName;
+    }
     
+    public void setImageFileName(String imagefileName ){
+        this.imagefileName = imagefileName;
+    }
 
 
 }
