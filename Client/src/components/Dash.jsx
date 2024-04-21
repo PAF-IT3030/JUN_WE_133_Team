@@ -12,10 +12,10 @@ const Dashboard = () => {
             <div className="dashboard-link">
               <p className="link-heading">Dietary Preferences</p>
               <ul className="link-list">
-                <li><a href="/meallist?category=vegan">Vegan</a></li>
-                <li><a href="/meallist?category=vegetarian">Vegetarian</a></li>
-                <li><a href="/meallist?category=paleo">Paleo</a></li>
-                <li><a href="/meallist?category=keto">Keto</a></li>
+                <li><a href="/save?category=vegan">Vegan</a></li>
+                <li><a href="/save?category=vegetarian">Vegetarian</a></li>
+                <li><a href="/save?category=paleo">Paleo</a></li>
+                <li><a href="/save?category=keto">Keto</a></li>
               </ul>
             </div>
           </div>
