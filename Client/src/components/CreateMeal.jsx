@@ -7,18 +7,18 @@ class CreateMeal extends Component {
         super(props);
 
         this.state = {
-            firstname: '',
-            lastname: '',
-            age: '',
-            occupation: '',
+            meals: '',
+            recipes: '',
+            potion: '',
+            info: '',
             error: '',
             successMessage: ''
         };
 
-        this.changeFirstNameHandler = this.changeFirstNameHandler.bind(this);
-        this.changeLastNameHandler = this.changeLastNameHandler.bind(this);
-        this.changeAgeHandler = this.changeAgeHandler.bind(this);
-        this.changeOccupationHandler = this.changeOccupationHandler.bind(this);
+        this.changeMealsHandler = this.changeMealsHandler.bind(this);
+        this.changeRecipesHandler = this.changeRecipesHandler.bind(this);
+        this.changePotionHandler = this.changePotionHandler.bind(this);
+        this.changeInfoHandler = this.changeInfoHandler.bind(this);
         this.saveOrUpdateMeal = this.saveOrUpdateMeal.bind(this);
     }
 
@@ -27,20 +27,20 @@ class CreateMeal extends Component {
 
         // Check if any field is empty
         if (
-            !this.state.firstname ||
-            !this.state.lastname ||
-            !this.state.age ||
-            !this.state.occupation
+            !this.state.meals ||
+            !this.state.recipes ||
+            !this.state.potion ||
+            !this.state.info
         ) {
             this.setState({ error: 'Please fill in all fields' });
             return;
         }
 
         let meal = {
-            firstname: this.state.firstname,
-            lastname: this.state.lastname,
-            age: this.state.age,
-            occupation: this.state.occupation
+            meals: this.state.meals,
+            recipes: this.state.recipes,
+            potion: this.state.potion,
+            info: this.state.info
         };
 
         MealPlan.createMeal(meal)
@@ -51,10 +51,10 @@ class CreateMeal extends Component {
                 });
                 // Reset form fields after successful submission
                 this.setState({
-                    firstname: '',
-                    lastname: '',
-                    age: '',
-                    occupation: ''
+                    meals: '',
+                    recipes: '',
+                    potion: '',
+                    info: ''
                 });
                 // Redirect to home after saving
                 this.props.history.push('/');
@@ -65,20 +65,20 @@ class CreateMeal extends Component {
             });
     }
     
-    changeFirstNameHandler = (event) => {
-        this.setState({ firstname: event.target.value });
+    changeMealsHandler = (event) => {
+        this.setState({ meals: event.target.value });
     }
 
-    changeLastNameHandler = (event) => {
-        this.setState({ lastname: event.target.value });
+    changeRecipesHandler = (event) => {
+        this.setState({ recipes: event.target.value });
     }
 
-    changeAgeHandler = (event) => {
-        this.setState({ age: event.target.value });
+    changePotionHandler = (event) => {
+        this.setState({ potion: event.target.value });
     }
 
-    changeOccupationHandler = (event) => {
-        this.setState({ occupation: event.target.value });
+    changeInfoHandler = (event) => {
+        this.setState({ info: event.target.value });
     }
 
     cancel = () => {
@@ -99,40 +99,40 @@ class CreateMeal extends Component {
                                         <label> Meals:(Breakfast, Lunch, Dinner) </label>
                                         <input 
                                             placeholder="Enter Meals" 
-                                            name="firstname" 
+                                            name="meals" 
                                             className="form-control" 
-                                            value={this.state.firstname} 
-                                            onChange={this.changeFirstNameHandler}
+                                            value={this.state.meals} 
+                                            onChange={this.changeMealsHandler}
                                         />
                                     </div>
                                     <div className="form-group">
                                         <label> Recipes: </label>
                                         <input 
                                             placeholder="Enter recipes" 
-                                            name="lastname" 
+                                            name="recipes" 
                                             className="form-control" 
-                                            value={this.state.lastname} 
-                                            onChange={this.changeLastNameHandler}
+                                            value={this.state.recipes} 
+                                            onChange={this.changeRecipesHandler}
                                         />
                                     </div>
                                     <div className="form-group">
                                         <label> Potion Size: </label>
                                         <input 
                                             placeholder="Enter Potion Size" 
-                                            name="age" 
+                                            name="potion" 
                                             className="form-control" 
-                                            value={this.state.age} 
-                                            onChange={this.changeAgeHandler}
+                                            value={this.state.potion} 
+                                            onChange={this.changePotionHandler}
                                         />
                                     </div>
                                     <div className="form-group">
                                         <label> Nutritional Infromation: </label>
                                         <input 
                                             placeholder="Enter Nutritional Information" 
-                                            name="occupation" 
+                                            name="info" 
                                             className="form-control" 
-                                            value={this.state.occupation} 
-                                            onChange={this.changeOccupationHandler}
+                                            value={this.state.info} 
+                                            onChange={this.changeInfoHandler}
                                         />
                                     </div>
                                     <br />

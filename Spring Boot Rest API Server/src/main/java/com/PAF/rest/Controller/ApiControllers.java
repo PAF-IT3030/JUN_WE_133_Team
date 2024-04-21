@@ -57,10 +57,10 @@ public ResponseEntity<User> getUserById(@PathVariable long id) {
     @PutMapping(value = "/update/{id}")
     public String updateUser(@PathVariable long id, @RequestBody User user) {
         User updatedUser = userRepo.findById(id).get();
-        updatedUser.setFirstname(user.getFirstname());
-        updatedUser.setLastname(user.getLastname());
-        updatedUser.setOccupation(user.getOccupation());
-        updatedUser.setAge(user.getAge());
+        updatedUser.setMeals(user.getMeals());
+        updatedUser.setRecipes(user.getRecipes());
+        updatedUser.setInfo(user.getInfo());
+        updatedUser.setPotion(user.getPotion());
         userRepo.save(updatedUser);
         return "Updated";
         

@@ -14,19 +14,18 @@ public class User {
     private long id;
 
     @Column
-    private String firstname;
+    private String meals;
 
     @Column
-    private String lastname;
+    private String recipes;
 
     @Column
-    private int age;
+    private int potion;
 
     @Column
-    private String occupation;
+    private String info;
 
-    @Column
-    private String job;
+   
 
     public long getId() {
         return id;
@@ -34,29 +33,29 @@ public class User {
     public void setId(long id) {
         this.id = id;
     }
-    public String getFirstname() {
-        return firstname;
+    public String getMeals() {
+        return meals;
     }
-    public void setFirstname(String firstname) {
-        this.firstname = firstname;
+    public void setMeals(String meals) {
+        this.meals = meals;
     }
-    public String getLastname() {
-        return lastname;
+    public String getRecipes() {
+        return recipes;
     }
-    public void setLastname(String lastname) {
-        this.lastname = lastname;
+    public void setRecipes(String recipes) {
+        this.recipes = recipes;
     }
-    public int getAge() {
-        return age;
+    public int getPotion() {
+        return potion;
     }
-    public void setAge(int age) {
-        this.age = age;
+    public void setPotion(int potion) {
+        this.potion = potion;
     }
-    public String getOccupation() {
-        return occupation;
+    public String getInfo() {
+        return info;
     }
-    public void setOccupation(String occupation) {
-        this.occupation = occupation;
+    public void setInfo(String info) {
+        this.info = info;
     }
     
 

@@ -61,15 +61,18 @@ class MealList extends Component {
                         <div key={meal.id} className="col-md-4 mb-4">
                             <div className="card">
                                 <div className="card-body">
-                                    <p className="card-title">Meal Plans:{meal.firstname}</p>
-				    <p className="card-text">Recipes: {meal.lastname}</p>
-                                    <p className="card-text">Potion Size: {meal.age}</p>
-                                    <p className="card-text">Nutritional Information: {meal.occupation}</p>
+                                    <p className="card-title">Meal Plans:{meal.meals}</p>
+				    <p className="card-text">Recipes: {meal.recipes}</p>
+                                    <p className="card-text">Potion Size: {meal.potion}</p>
+                                    <p className="card-text">Nutritional Information: {meal.info}</p>
                                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
-                                        <Link to={`/view/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>View</Link>
-                                        <button onClick={() => this.deleteMeal(meal.id)} className="btn btn-danger">Delete</button>
-                                        <Link to={`/update/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>Update</Link>
-                                    </div>
+    <Link to={`/view/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>View</Link>
+    <button onClick={() => this.deleteMeal(meal.id)} className="btn btn-danger">Delete</button>
+    <Link to={`/update/${meal.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>Update</Link>
+    <button className="btn btn-link" style={{ marginLeft: "10px", color: "red" }}>&#x2764;</button>
+    
+</div>
+
                                 </div>
                             </div>
                         </div>

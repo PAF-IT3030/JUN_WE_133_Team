@@ -2,22 +2,22 @@ import React, { useState, useEffect } from 'react';
 import MealPlan from "../services/MealPlan";
 
 const UpdateMeal = () => {
-  const [firstname, setFirstname] = useState('');
-  const [lastname, setLastname] = useState('');
-  const [occupation, setOccupation] = useState('');
-  const [age, setAge] = useState('');
+  const [meals, setMeals] = useState('');
+  const [recipes, setRecipes] = useState('');
+  const [info, setInfo] = useState('');
+  const [potion, setPotion] = useState('');
 
-  const [meals, setMeals] = useState([]);
+  const [users, setUsers] = useState([]);
   const [selectedMealId, setSelectedMealId] = useState('');
 
   useEffect(() => {
-    fetchMeals();
+    fetchUsers();
   }, []);
 
-  const fetchMeals = async () => {
+  const fetchUsers = async () => {
     try {
       const response = await MealPlan.getMeals();
-      setMeals(response.data);
+      setUsers(response.data);
      
     } catch (error) {
       console.error('Error fetching meals:', error);
@@ -27,17 +27,17 @@ const UpdateMeal = () => {
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     switch (name) {
-      case 'firstname':
-        setFirstname(value);
+      case 'meals':
+        setMeals(value);
         break;
-      case 'lastname':
-        setLastname(value);
+      case 'recipes':
+        setRecipes(value);
         break;
-      case 'occupation':
-        setOccupation(value);
+      case 'info':
+        setInfo(value);
         break;
-      case 'age':
-        setAge(value);
+      case 'potion':
+        setPotion(value);
         break;
       default:
         break;
@@ -48,15 +48,15 @@ const UpdateMeal = () => {
     e.preventDefault();
     try {
       
-      const id = meals.length > 0 ? meals[0].id : '';
-      await MealPlan.updateMeal({ firstname, lastname, occupation, age }, id);
+      const id = users.length > 0 ? users[0].id : '';
+      await MealPlan.updateMeal({ meals, recipes, info, potion }, id);
       alert('Meal updated successfully');
-      fetchMeals();
+      fetchUsers();
       // Clear form fields
-      setFirstname('');
-      setLastname('');
-      setOccupation('');
-      setAge('');
+      setMeals('');
+      setRecipes('');
+      setInfo('');
+      setPotion('');
     } catch (error) {
       console.error('Error updating meal:', error);
     }
@@ -75,9 +75,9 @@ const UpdateMeal = () => {
                   <label>Meal Plans</label>
                   <input
                     type="text"
-                    value={firstname}
+                    value={meals}
                     onChange={handleInputChange}
-                    name="firstname"
+                    name="meals"
                     placeholder="Enter New meal plan"
                     className="form-control"
                   />
@@ -86,9 +86,9 @@ const UpdateMeal = () => {
                   <label>Recipes</label>
                   <input
                     type="text"
-                    value={lastname}
+                    value={recipes}
                     onChange={handleInputChange}
-                    name="lastname"
+                    name="recipes"
                     placeholder="Enter New Recipes"
                     className="form-control"
                   />
@@ -97,9 +97,9 @@ const UpdateMeal = () => {
                   <label>Nutritional Information</label>
                   <input
                     type="text"
-                    value={occupation}
+                    value={info}
                     onChange={handleInputChange}
-                    name="occupation"
+                    name="info"
                     placeholder="Enter New Nutritional Information"
                     className="form-control"
                   />
@@ -108,9 +108,9 @@ const UpdateMeal = () => {
                   <label>Potion Size</label>
                   <input
                     type="number"
-                    value={age}
+                    value={potion}
                     onChange={handleInputChange}
-                    name="age"
+                    name="potion"
                     placeholder="Enter New Potion Size"
                     className="form-control"
                   />
