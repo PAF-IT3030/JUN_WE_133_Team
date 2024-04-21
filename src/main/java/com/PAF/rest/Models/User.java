@@ -1,5 +1,7 @@
 package com.PAF.rest.Models;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -26,7 +28,7 @@ public class User {
     private String progress;
 
     @Column
-    private String imagefileName;
+    private MultipartFile imagefileName;
 
     public long getId() {
         return id;
@@ -59,11 +61,11 @@ public class User {
         this.progress = progress;
     }
 
-    public String getImageFileName(){
+    public MultipartFile getImageFileName(){
         return imagefileName;
     }
     
-    public void setImageFileName(String imagefileName ){
+    public void setImageFileName(MultipartFile imagefileName ){
         this.imagefileName = imagefileName;
     }
 
