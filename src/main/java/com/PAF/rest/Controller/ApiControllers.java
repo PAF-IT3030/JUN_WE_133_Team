@@ -3,8 +3,10 @@ package com.PAF.rest.Controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.PAF.rest.Models.User;
+import com.PAF.rest.Models.Template;
 
 import com.PAF.rest.Repo.UserRepo;
+import com.PAF.rest.Repo.TemplateRepo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -61,4 +63,38 @@ public class ApiControllers {
         userRepo.delete(deleteUser);
         return "Deleted :"+id;
     }
+
+    @Autowired
+    private TemplateRepo templateRepo;
+
+    @GetMapping(value = "/templist")
+    public String getTempList() {
+        return "Welcome";
+    }
+
+    @GetMapping(value = "/temps")
+    public List<Template> getTemps(){
+        return templateRepo.findAll();
+    }
+
+    @PostMapping(value = "/savetemps")
+    public String saveTemp(@RequestBody Template template){
+        templateRepo.saveTemps(template);
+        return "Saved Template...";
+    }
+
+    @PutMapping(value = "/updateTem/{id}")
+    public String updateTemplate(@PathVariable long id, @RequestBody Template template) {
+        Template updatedTemplate = templateRepo.findById(id).get();
+        updatedTemplate.setWorkout_name(template.getWorkout_name());
+        updatedTemplate.setDescription(template.getDescription());
+        updatedTemplate.setSets(template.getSets());
+        updatedTemplate.setExercise_name(template.getExercise_name());
+        updatedTemplate.setRepetition(template.getRepetition());
+        
+        templateRepo.save(updatedTemplate);
+        return "Updated";
+        
+    }
+
 }
