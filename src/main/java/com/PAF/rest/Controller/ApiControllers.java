@@ -97,4 +97,11 @@ public class ApiControllers {
         
     }
 
+    @DeleteMapping(value = "/deleteTem/{id}")
+    public String deleteTemplate(@PathVariable long id){
+        Template deleteTemplate = templateRepo.findById(id).get();
+        templateRepo.delete(deleteTemplate);
+        return "Deleted Yours :"+id;
+    }
+
 }
