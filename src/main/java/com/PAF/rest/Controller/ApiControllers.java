@@ -30,10 +30,7 @@ public class ApiControllers {
     @Autowired
     private UserRepo userRepo;
 
-    @GetMapping(value = "/")
-    public String getPage() {
-        return "Welcome";
-    }
+    
 
     @GetMapping(value = "/users")
     public List<User> getUsers(){
@@ -61,7 +58,7 @@ public class ApiControllers {
         
         
         
-        return "Saved...";
+        return "Post added....";
     }
 
     @PutMapping(value = "/update/{id}")
