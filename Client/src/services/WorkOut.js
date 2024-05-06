@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const REST_API_BASE_URL = 'http://localhost:8084'; // Corrected base URL
+const REST_API_BASE_URL = 'http://localhost:8086'; // Corrected base URL
 
 class WorkOut {
 

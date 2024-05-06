@@ -8,7 +8,6 @@ const UpdateUser = () => {
   const [sets, setSets] = useState(''); 
   const [repetitions, setRepetitions] = useState(''); 
   const [fitnessGoals, setFitnessGoals] = useState('');
-
   const [users, setUsers] = useState([]);
   const [selectedUserId, setSelectedUserId] = useState('');
 
@@ -78,15 +77,30 @@ const UpdateUser = () => {
   };
 
   return (
-    <div>
-      <br />
-      <div className="container">
-        <div className="row">
-          <div className="card col-md-6 offset-md-3">
-            <h3 className="text-center">Update Workout</h3>
-            <div className="card-body">
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
+    <div className="row">
+      <div className="col-md-3">
+        <div className="card">
+          <div className="card-header">Dashboard</div>
+          <div className="card-body">
+            <ul className="nav flex-column">
+            <li className="nav-item"><a href="/" className="nav-link">Home</a></li>
+            <li className="nav-item"><a href="/add-workout" className="nav-link">Profile</a></li>
+                                <li className="nav-item"><a href="/update-workout" className="nav-link">Posts</a></li>
+                                <li className="nav-item"><a href="/update-workout" className="nav-link">Settings</a></li>
+                                <li className="nav-item"><a href="/update-workout" className="nav-link">Notifications</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-9">
+        <div className="container">
+          <div className="row">
+            <div className="card col-md-8 offset-md-2">
+              <h3 className="text-center">Update Workout</h3>
+              <div className="card-body">
+                <form onSubmit={handleSubmit}>
+                  <div className="form-group">
+                    <label>Workout Name:</label>
                   <label>Workout Name:</label>
                   <input
                     type="text"
@@ -158,6 +172,7 @@ const UpdateUser = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
