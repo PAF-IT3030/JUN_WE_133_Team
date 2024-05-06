@@ -36,34 +36,34 @@ public class Template {
     public void setId(long id) {
         this.id = id;
     }
-    public String getWorkout_name() {
+    public String getType_of_activity() {
         return type_ofActivity;
     }
-    public void setWorkout_name(String type_ofActivity) {
+    public void setType_of_activity(String type_ofActivity) {
         this.type_ofActivity = type_ofActivity;
     }
-    public String getDescription() {
+    public String getDuration() {
         return duration;
     }
-    public void setDescription(String duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
     }
-    public String getExercise_name() {
+    public String getIntensity() {
         return intensity;
     }
-    public void setExercise_name(String intensity) {
+    public void setIntensity(String intensity) {
         this.intensity = intensity;
     }
-    public String getSets() {
+    public String getIntervals() {
         return intervals;
     }
-    public void setSets(String intervals) {
+    public void setIntervals(String intervals) {
         this.intervals = intervals;
     }
-    public String getRepetition() {
+    public String getEquipment_Availability() {
         return equipmentAvailability;
     }
-    public void setRepetition(String equipmentAvailability) {
+    public void setEquipment_Availability(String equipmentAvailability) {
         this.equipmentAvailability = equipmentAvailability;
     }
     

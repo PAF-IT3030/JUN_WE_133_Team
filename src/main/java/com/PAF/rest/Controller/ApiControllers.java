@@ -86,14 +86,14 @@ public class ApiControllers {
     @PutMapping(value = "/updateTem/{id}")
     public String updateTemplate(@PathVariable long id, @RequestBody Template template) {
         Template updatedTemplate = templateRepo.findById(id).get();
-        updatedTemplate.setWorkout_name(template.getWorkout_name());
-        updatedTemplate.setDescription(template.getDescription());
-        updatedTemplate.setSets(template.getSets());
-        updatedTemplate.setExercise_name(template.getExercise_name());
-        updatedTemplate.setRepetition(template.getRepetition());
+        updatedTemplate.setType_of_activity(template.getType_of_activity());
+        updatedTemplate.setDuration(template.getDuration());
+        updatedTemplate.setIntensity(template.getIntensity());
+        updatedTemplate.setIntervals(template.getIntervals());
+        updatedTemplate.setEquipment_Availability(template.getEquipment_Availability());
         
         templateRepo.save(updatedTemplate);
-        return "Updated";
+        return "Updated Yours";
         
     }
 
