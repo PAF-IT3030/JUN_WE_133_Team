@@ -1,0 +1,22 @@
+server:
+  port: 8081
+spring:
+  datasource:
+    username: root
+    password: kasun
+    url: jdbc:mysql://localhost:3306/crudusers
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+project:
+  poster: posters/
+
+
+base:
+  url: "http://localhost:8080"
