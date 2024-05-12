@@ -1,0 +1,35 @@
+.meal_box {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two columns */
+    gap: 20px; /* Gap between columns */
+  }
+  
+  .meal_image {
+    grid-column: 1 / 2; /* Image in the first column */
+  }
+  
+  .meal_content {
+    grid-column: 2 / 3; /* Content in the second column */
+  }
+  
+  .meal_title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #686666;
+  }
+
+  .meal_topic {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+    color: cadetblue;
+  }
+
+  .meal_username {
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 10px;
+    color: #686666;
+  }
