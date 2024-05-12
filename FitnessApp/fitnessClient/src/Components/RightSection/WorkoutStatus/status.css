@@ -1,0 +1,76 @@
+/* Title styling */
+.plan_title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}
+
+/* Bold text styling */
+.plan_bold {
+    font-weight: 700;
+    color: #716a6a;
+}
+
+/* Italic text styling */
+.plan_italic {
+    font-style: italic;
+    color: #555;
+}
+
+/* Highlighted text styling */
+.plan_highlight {
+    background-color: #ffcc00; /* Yellow background for highlight */
+    padding: 0.2rem;
+    border-radius: 3px;
+}
+
+/* Tag styling */
+.plan_tag {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #555;
+    background-color: #f0f0f0; /* Light gray background for tags */
+    padding: 0.2rem 0.5rem;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+/* Status box styling */
+.status_box {
+    background-color: #cbe9ecf7;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
+    transition: box-shadow 0.3s ease;
+}
+
+/* Hover effect on status box */
+.status_box:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Status title styling */
+.status_title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #080808;
+    margin-bottom: 0.5rem;
+    margin-right: 10px;
+}
+
+/* Status total styling */
+.status_total {
+    font-size: 1.0rem;
+    font-weight: 500;
+    color: #07054c;
+    margin-bottom: 1rem;
+    margin-left: 100px;
+}
+
+/* Add a subtle border to status box */
+.status_box {
+    border: 1px solid #ddd;
+}
