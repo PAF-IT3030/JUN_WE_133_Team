@@ -3,7 +3,7 @@ import { Avatar, Button } from "@mui/material";
 import ImageIcon from "@mui/icons-material/Image";
 import FmdGoodIcon from "@mui/icons-material/FmdGood";
 import TagFacesIcon from "@mui/icons-material/TagFaces";
-import { PostCard } from "./PostCard";
+
 import axios from "axios"; // Import Axios
 import "./post.css";
 
