@@ -58,8 +58,8 @@ class ListMedia extends Component {
                                     <p className="card-text">Meals: {userMedia.meals}</p>
                                     <p className="card-text">Progress: {userMedia.progress}</p>
                                     <div style={{ display: "flex", justifyContent: "space-between", marginTop: "20px" }}>
-                                        <button onClick={() => this.deleteMedia(userMedia.id)} className="btn btn-danger">Delete</button>
-                                        <Link to={`/update/${userMedia.id}`} className="btn btn-info" style={{ textDecoration: "none" }}>Update</Link>
+                                        <button onClick={() => this.deleteMedia(userMedia.id)} className="btn delete-button">Delete</button>
+                                        <Link to={`/update/${userMedia.id}`} className="btn" style={{ textDecoration: "none", backgroundColor: "#000", color: "#fff" }}>Update</Link>
                                     </div>
                                 </div>
                             </div>

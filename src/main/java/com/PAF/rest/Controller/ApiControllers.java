@@ -1,6 +1,7 @@
 package com.PAF.rest.Controller;
 
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.PAF.rest.Models.User;
 import com.PAF.rest.Repo.UserRepo;
@@ -12,8 +13,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 // import java.io.InputStream;
 // import java.nio.file.*;
 // import java.nio.file.Paths;
@@ -30,6 +37,8 @@ public class ApiControllers {
     @Autowired
     private UserRepo userRepo;
 
+    public static String uploadDir = System.getProperty("user.dir")+"/public/image";
+
     
 
     @GetMapping(value = "/users")
@@ -38,9 +47,15 @@ public class ApiControllers {
     }
 
     @PostMapping(value = "/save")
-    public String saveUser(@RequestBody User user){
-        
-        userRepo.save(user);
+    public String saveUser(@ModelAttribute User user ){
+        // @RequestParam("image") MultipartFile file)throws IOException{
+        //     String originalFilename =file.getOriginalFilename();
+        //     Path fileName = Paths.get(uploadDir,originalFilename);
+        //     Files.write(fileName,file.getBytes());
+
+        //     user.setImageFileName(originalFilename);
+            
+            userRepo.save(user);
         // String image = user.getImageFileName();
 
         // try{
